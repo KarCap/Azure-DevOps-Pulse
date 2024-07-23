@@ -5,6 +5,7 @@
 
 trigger:
 - main
+- staging
 
 pool:
   vmImage: 'windows-latest'
