@@ -40,9 +40,9 @@ variable "VM_sku" {
   description = "Specify SKU per VM"
   type        = map
   default     = {
-    "HTR1500" = "Standard_DS1_v2"
-    "HTR1900" = "Standard_DS2_v2"
-    "HTR1800" = "Standard_D2as_v4"
+    "HTR1500" = "Standard_B1ls"
+    "HTR1900" = "Standard_B1ms"
+    #"HTR1800" = "Standard_D2as_v4"
   }
 }
 

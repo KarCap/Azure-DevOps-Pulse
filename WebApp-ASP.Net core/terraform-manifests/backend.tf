@@ -8,10 +8,10 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name = "terraform_rg01"
-    storage_account_name = "terraformstate2015"
-    container_name = "tfcontainer01"
-    key = "terraform.tfstate"
+    resource_group_name  = "storagerg"
+    storage_account_name = "cosstorage1234567"
+    container_name       = "tfstatefile"
+    key                  = "terraform.tfstate"
   }
 }
 
