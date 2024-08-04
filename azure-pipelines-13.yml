@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
- vmImage: ubuntu-latest
+ vmImage: 'windows-latest'
 
 stages:
   - stage: 'Build'
@@ -24,10 +24,10 @@ stages:
               provider: 'azurerm'
               command: 'init'
               workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
-              backendServiceArm: 'Dev Test(2)(18a0e420-4ca6-47f3-ba52-2534b3c7d2c1)'
-              backendAzureRmResourceGroupName: 'terraform_rg01'
-              backendAzureRmStorageAccountName: 'terraformstate2015'
-              backendAzureRmContainerName: 'tfcontainer01'
+              backendServiceArm: 'Free Trial(4e03ab82-36bb-406b-a279-58ff33884112)'
+              backendAzureRmResourceGroupName: 'storagerg'
+              backendAzureRmStorageAccountName: 'cosstorage1234567'
+              backendAzureRmContainerName: 'tfstatefile'
               backendAzureRmKey: 'terraform.tfstate'
           - task: TerraformTaskV4@4
             inputs:
@@ -36,7 +36,7 @@ stages:
               workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
               customCommand: 'fmt'
               outputTo: 'console'
-              environmentServiceNameAzureRM: 'Dev Test(2)(18a0e420-4ca6-47f3-ba52-2534b3c7d2c1)'
+              environmentServiceNameAzureRM: 'Free Trial(4e03ab82-36bb-406b-a279-58ff33884112)'
           - task: TerraformTaskV4@4
             inputs:
               provider: 'azurerm'
@@ -47,7 +47,7 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
-              environmentServiceNameAzureRM: 'Dev Test(2)(18a0e420-4ca6-47f3-ba52-2534b3c7d2c1)'
+              environmentServiceNameAzureRM: 'Free Trial(4e03ab82-36bb-406b-a279-58ff33884112)'
           - task: CopyFiles@2
             inputs:
               SourceFolder: '$(Build.SourcesDirectory)'
