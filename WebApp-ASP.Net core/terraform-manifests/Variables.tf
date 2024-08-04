@@ -116,7 +116,7 @@ variable "common_tags" {
   type        = map
   default = {
     environment = "staging"
-    department  = "IT"
+    department  = "ITdep"
     Owner      = "Hriyen"
     Cos_Managed = "yes"
   }
